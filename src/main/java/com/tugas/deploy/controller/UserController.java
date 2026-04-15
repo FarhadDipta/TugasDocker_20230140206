@@ -22,7 +22,7 @@ public class UserController {
     public String login(@RequestParam String username,
                         @RequestParam String password) {
 
-        if (username.equals("admin") && password.equals("123456")) {
+        if (username.equals("admin") && password.equals("20230140206")) {
             return "redirect:/home";
         }
         return "login";
