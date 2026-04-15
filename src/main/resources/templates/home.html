@@ -2,23 +2,77 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #4facfe;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #4facfe;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
 
-<h2>MY Website NIM_KAMU</h2>
-<a href="/form">Tambah Data</a>
+<div class="container">
+    <h2>MY Website 20230140206 - Farhad</h2>
 
-<table border="1">
-    <tr>
-        <th>Nama</th>
-        <th>NIM</th>
-    </tr>
+    <a href="/form" class="btn">+ Tambah Data</a>
 
-    <tr th:each="u : ${users}">
-        <td th:text="${u.nama}"></td>
-        <td th:text="${u.nim}"></td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+        </tr>
+
+        <tr th:each="u : ${users}">
+            <td th:text="${u.nama}"></td>
+            <td th:text="${u.nim}"></td>
+        </tr>
+    </table>
+</div>
 
 </body>
 </html>

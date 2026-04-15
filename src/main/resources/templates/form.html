@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Form Input</title>
+    <title>Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #4facfe;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Form Input Mahasiswa</h2>
+<div class="card">
+    <h2>Input Data</h2>
 
-<form action="/save" method="post" th:object="${user}">
+    <form action="/save" method="post" th:object="${user}">
+        <input type="text" th:field="*{nama}" placeholder="Nama">
+        <input type="text" th:field="*{nim}" placeholder="NIM">
+        <button type="submit">Simpan</button>
+    </form>
 
-    <label>Nama:</label><br>
-    <input type="text" th:field="*{nama}"><br><br>
-
-    <label>NIM:</label><br>
-    <input type="text" th:field="*{nim}"><br><br>
-
-    <button type="submit">Simpan</button>
-</form>
-
-<br>
-<a href="/home">Kembali ke Home</a>
+    <a href="/home">← Kembali</a>
+</div>
 
 </body>
 </html>
